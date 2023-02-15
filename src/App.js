@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+// import Navbar from './ReactRouterComp/Navbar'
+import About from './ReactRouterComp/About'
+import Contact from './ReactRouterComp/Contact'
+// import CompA from './Component/CompA'
+import Error from './ReactRouterComp/Error'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* React api call with import axios */}
+      {/* <CompA /> */}
+
+
+      {/* React Router DOM */}
+      {/* <About />
+      <Contact /> */}
+
+      <Switch>
+        <Route exact path='/' component={About} />
+        <Route exact path='./src/ReactRouterComp/Contact.jsx' component={Contact} />
+        <Route component={Error} />
+      </Switch>
+    </>
+  )
 }
 
-export default App;
+export default App
